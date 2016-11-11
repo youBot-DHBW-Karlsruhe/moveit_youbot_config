@@ -69,7 +69,6 @@ positions:
  unit: 'rad'
  value: 2.0"
 ```
-
 **Hint:** The youBot PC has got two seperate ethernet interfaces. You should check, which interface is used for the EtherCAT communication with the youBot motors and sensors. In our case we had to change the driver configuration to use the second ethernet interface called `eth1`. The configuration file can be found in `/opt/ros/hydro/share/youbot_driver/config/youbot_base.cfg`. You need root permissions to make changes to the file.
 
 **Hint:** After you have installed the KUKA youBot driver, you have to give the driver raw acess to the ethernet interface where the motors and sensors are connected to. Run the following commands to do this:
@@ -97,3 +96,15 @@ Start the ROS master node and test your laser scanner with:
 roslaunch sick_tim sick_tim551*.launch
 ```
 Use the auto-completion feature to find the right name of the launch file. If there were no errors, you should now be able to display the sensor data in rviz.
+
+## Setup ASUS Xtion PRO live camera
+At first connect the camera to the youBot via USB. After that install the openni-driver as described in the [ROS wiki](http://wiki.ros.org/openni_camera).
+``` bash
+sudo apt-get install ros-hydro-openni-camera
+sudo apt-get install ros-hydro-openni-launch
+```
+Now you are able to test the camera. Therefore be sure that the ROS master is running and type the following:
+``` bash
+roslaunch openni_launch openni.launch
+```
+In another terminal type either `rosrun image_view disparity_view image:=/camera/depth/disparity` for diaplaying the depth sensor data or `rosrun image_view image_view image:=/camera/rgb/image_color` to display the RGB images.

@@ -55,7 +55,7 @@ rosrun youbot_driver_ros_interface youbot_keyboard_teleop.py
 ```
 Alternatively you can send a new joint position to the youBot manipulator arm with `rostopic`. This command will rotate the arm to a new angle (_1.552 rad = 90 degree_).
 
-``` yml
+``` bash
 rostopic pub -1 /arm_1/arm_controller/position_command brics_actuator/JointPositions "
 poisonStamp:
  originator: ''
@@ -77,3 +77,23 @@ positions:
 sudo setcap cap_net_raw+ep /opt/ros/hydro/lib/youbot_driver_ros_interface/youbot_driver_ros_interface
 sudo ldconfig /opt/ros/hydro/lib
 ```
+
+## 4. Setup SICK Tim551 laser Scanner
+The SICK Tim551 laser scanner should be configured to have a link-local address on his ethernet interface. If you have to change the interface properties, please refer to the configuration steps on the [SICK Tim ROS wiki page](http://wiki.ros.org/sick_tim). The configuration program can only be run on a Windows machine with the SICK Tim laser scanner connected via USB. We used the IP: `169.254.8.76`.
+
+After you have successfully configured the laser scanner, connect it to the youBot via ethernet. After that install the SICK Tim driver and ROS node via:
+``` bash
+sudo apt-get install ros-hydro-sick-tim
+```
+Now change the IP address in the launch file `/opt/ros/hydro/share/sick_tim/launch/sick_tim551*.launch` to `169.254.8.76`. The port is `2111`. You need root permissions for this operation as well.
+
+If you are not able to ping the laser scanner under its IP address (`ping 169.254.8.76`) you have to change the Ubuntu ethernet interface configuration as well. Therefore configure the interface `eth0` (or `eth1` if eth0 is your interface for the youBot motors and sensors) to only allow link-local addresses. We used the graphical user interface to change the behaviour of `Wired Connection 1`. Select in the dropdown box of the tab IPv4 _l
+Linklocal_ and save your changes.
+
+**Hint:** We had to give the administrator (root user) a new password to be able to change the internet settings.
+
+Start the ROS master node and test your laser scanner with:
+``` bash
+roslaunch sick_tim sick_tim551*.launch
+```
+Use the auto-completion feature to find the right name of the launch file. If there were no errors, you should now be able to display the sensor data in rviz.

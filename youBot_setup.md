@@ -32,15 +32,15 @@
   - Range: 0.8 m ... 3.5 m
   - USB-Connection
 
-## 1. Install the preconfigured Ubuntu with ROS
-As a first step you have to prepare a USB Stick (4 GB) as a bootable device. Therefore go to the [youBot-website](http://www.youbot-store.com/developers/remastered-ubuntu-linux) and dowload the ROS Hydro Image Version 1.0.1. Create your live-boot USB-Stick and plug it into one of the USB ports of the KUKA youBot onboard PC. Start the PC and follow the onscreen installation instruction. They are very similar to the Ubuntu installation steps.
+## 1. Install the Preconfigured Ubuntu With ROS
+As a first step you have to prepare a USB Stick (4 GB) as a bootable device. Therefore go to the [youBot-website](http://www.youbot-store.com/developers/remastered-ubuntu-linux) and dowload the ROS Hydro Image Version 1.0.1 (ROS Hydro on Ubuntu 12.04). Create your live-boot USB-Stick and plug it into one of the USB ports of the KUKA youBot onboard PC. Start the PC and follow the onscreen installation instruction. They are very similar to the Ubuntu installation steps.
 
 **Hint:** If the PC boots into an already installed OS on the SSD, you have to change the Boot Order and Disk Order in the BIOS.
 
 ## 2. Setup WLAN Connection
 We used a Fritz! WLAN-USB-Stick for connecting the youBot with the WLAN of the DHBW. It's a plug and play device, therefore we just plug it in and waited until the driver was installed automatically. After that we were able to connect to the WLAN. This allowed us to load and install new software with the `apt`-package manager and use a webbrowser to do same research.
 
-## 3. Test installation and youBot driver
+## 3. Test Installation and youBot Driver
 If you want to test your installation there are some sample application already installed from the live-boot image. You will need at least three terminals to run the following commands.
 - Start the ROS master node:
 ``` bash
@@ -78,7 +78,7 @@ sudo setcap cap_net_raw+ep /opt/ros/hydro/lib/youbot_driver_ros_interface/youbot
 sudo ldconfig /opt/ros/hydro/lib
 ```
 
-## 4. Setup SICK Tim551 laser Scanner
+## 4. Setup SICK Tim551 Laser Scanner
 The SICK Tim551 laser scanner should be configured to have a link-local address on his ethernet interface. If you have to change the interface properties, please refer to the configuration steps on the [SICK Tim ROS wiki page](http://wiki.ros.org/sick_tim). The configuration program can only be run on a Windows machine with the SICK Tim laser scanner connected via USB. We used the IP: `169.254.8.76`.
 
 After you have successfully configured the laser scanner, connect it to the youBot via ethernet. After that install the SICK Tim driver and ROS node via:
@@ -98,7 +98,7 @@ roslaunch sick_tim sick_tim551*.launch
 ```
 Use the auto-completion feature to find the right name of the launch file. If there were no errors, you should now be able to display the sensor data in rviz.
 
-## Setup ASUS Xtion PRO live camera
+## Setup ASUS Xtion PRO Live Camera
 At first connect the camera to the youBot via USB. After that install the openni-driver as described in the [ROS wiki](http://wiki.ros.org/openni_camera).
 ``` bash
 sudo apt-get install ros-hydro-openni-camera

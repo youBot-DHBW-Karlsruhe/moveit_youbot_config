@@ -2,11 +2,11 @@
 
 ## Software
 
-|**Software**|**Name**|**Version**|**Remarks**|
-|-|-|-|-|
-|Operating System|Ubuntu|12.04 TLS|Delivered with the youBot-live-USB-Stick |
-|Meta Operating System|ROS|Hydro|Delivered with the youBot-live-USB-Stick |
-|ROS Nodes| <ul><li>youbot_driver</li> <li>youbot_driver_ros_interface</li> <li>youbot_navigation</li> <li>youbot_simulation</li> <li>youbot_applications</li> <li>youbot_ros_samples</li> <li>youbot_description</li> <li>sick_tim</li> <li>openni_camera</li> <li>openni_launch</li></ul>|ROS Hydro|Some delivered with the youBot-live-USB-Stick and some installed manually.|
+| **Software** | **Name** | **Version** | **Remarks** |
+| --- | --- | --- | --- |
+| Operating System | Ubuntu | 12.04 TLS|Delivered with the youBot-live-USB-Stick |
+| Meta Operating System | ROS | Hydro | Delivered with the youBot-live-USB-Stick |
+| ROS Nodes | <ul><li>youbot_driver</li> <li>youbot_driver_ros_interface</li> <li>youbot_navigation</li> <li>youbot_simulation</li> <li>youbot_applications</li> <li>youbot_ros_samples</li> <li>youbot_description</li> <li>sick_tim</li> <li>openni_camera</li> <li>openni_launch</li></ul> | ROS Hydro | Some delivered with the youBot-live-USB-Stick and some installed manually. |
 
 ## Hardware
 - KUKA youBot base

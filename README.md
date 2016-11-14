@@ -4,12 +4,13 @@ This repository contains the [moveit](http://moveit.ros.org/) configuration and 
 You can find our youBot configuration guide [here](youBot_setup.md), which explains all steps required to run the launch-files in this repository.
 
 ## Repository content
-|**Folder**|**Content**|
-|:-|:-|
-|robots|`.xacro`-File of our youBot with one arm, a laser scanner and a camera; has dependencies to the `youbot_description` and `sick_tim` ROS packages|
-|launch|Generated launch-files as well as custom ones|
-|config|This folder contains the generated moveit configuration files, which we adopted to our needs.|
-|scripts|In this folder we store some helpful bash scripts.|
+
+| **Folder** | **Content** |
+| :---    | :--- |
+| robots  | `.xacro`-File of our youBot with one arm, a laser scanner and a camera; has dependencies to the `youbot_description` and `sick_tim` ROS packages |
+| launch  | Generated launch-files as well as custom ones |
+| config  | This folder contains the generated moveit configuration files, which we adopted to our needs. |
+| scripts | In this folder we store some helpful bash scripts. |
 
 ## How to use the moveit setup assistant
 If you want to use moveit with the KUKA youBot, you have to configure moveit correctly. This is done by running the moveit setup assistant. At first install the moveit ROS package:

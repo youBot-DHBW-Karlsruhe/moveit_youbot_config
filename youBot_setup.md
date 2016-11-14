@@ -1,6 +1,7 @@
 # Setup the KUKA youBot onboard PC
 
 ## Software
+
 |**Software**|**Name**|**Version**|**Remarks**|
 |-|-|-|-|
 |Operating System|Ubuntu|12.04 TLS|Delivered with the youBot-live-USB-Stick |

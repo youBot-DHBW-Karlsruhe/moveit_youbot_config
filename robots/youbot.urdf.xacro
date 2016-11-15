@@ -39,12 +39,13 @@
 
 
   <!-- youbot base link and joint-->
+<!--
   <link name="youbot_link" />
   <joint name="youbot_base_joint" type="fixed">
       <parent link="youbot_link" />
       <child link="${base_name}_footprint" />
   </joint>
-
+-->
   <!-- youbot base files -->
   <xacro:youbot_base name="${base_name}"/>
 
